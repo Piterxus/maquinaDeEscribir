@@ -1,0 +1,91 @@
+html {
+  font-size: 1em;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 1)
+  );
+}
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.maquina {
+  z-index: 10;
+  position: relative;
+  left: -10px;
+}
+img {
+  width: 300px;
+  filter: drop-shadow(5px 5px 10px #444);
+}
+.folio {
+  border: 1px grey solid;
+  position: absolute;
+  background-color: #ffffff;
+  width: 150px;
+  height: 150px;
+  z-index: 0;
+  top: 0px;
+  right: 75px;
+  animation: folio 10s linear infinite;
+  font-family: "Special Elite", cursive;
+}
+.folio::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+}
+.maquina::before {
+  content: "¡TE PROPONGO UN JUEGO! Encuentra la tecla escondida. Una de las letras o números de tu teclado tiene premio ¡Escribe para encontrarla!";
+  width: 250px;
+  height: 100px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  right: -270px;
+  bottom: 150px;
+  text-shadow: 6px 6px 2px #777;
+  animation: parrafo 10s linear infinite;
+}
+@keyframes folio {
+  0% {
+    top: -10px;
+  }
+  25% {
+    top: -20px;
+  }
+  50% {
+    top: -50px;
+  }
+  100% {
+    top: -80px;
+  }
+}
+@keyframes parrafo {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 900px) {
+  .maquina::before {
+    bottom: -120px;
+    right: 5px;
+  }
+}
